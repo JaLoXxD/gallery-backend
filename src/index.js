@@ -12,6 +12,9 @@ const { API_PORT } = process.env;
 const port = process.env.PORT || API_PORT;
 app.set("port", port);
 
+//MULTER
+app.use(require("./multer"));
+
 //DATABASE
 require("./database");
 
@@ -21,4 +24,3 @@ app.use(require("./routes"));
 app.listen(app.get("port"), () => {
 	console.log("server listen on port " + app.get("port") + "...");
 });
-
