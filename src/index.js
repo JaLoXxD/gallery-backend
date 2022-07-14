@@ -12,6 +12,11 @@ const { API_PORT } = process.env;
 const port = process.env.PORT || API_PORT;
 app.set("port", port);
 
+//STATIC FILES
+app.use(express.static(path.join(__dirname, "public")));
+console.log(path.join(__dirname, "public"));
+app.use(express.static("public/uploads"));
+
 //MULTER
 app.use(require("./multer"));
 
