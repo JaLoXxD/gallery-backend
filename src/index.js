@@ -11,6 +11,9 @@ require("dotenv").config();
 const { API_PORT } = process.env;
 const port = process.env.PORT || API_PORT;
 
+//DATABASE
+require("./database");
+
 app.listen(app.get("port"), () => {
 	console.log("server listen on port " + app.get("port") + "...");
 });
