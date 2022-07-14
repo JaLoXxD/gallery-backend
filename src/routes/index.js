@@ -1,7 +1,6 @@
 const router = require("express-promise-router")();
+const { registerUser } = require("../controllers/user");
 
-router.get("/", (req, res) => {
-	return res.status(200).json({ message: "hello world" });
-});
+router.post("/register", registerUser);
 
 module.exports = router;
